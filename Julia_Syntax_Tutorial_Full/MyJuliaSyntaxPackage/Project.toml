@@ -1,0 +1,5 @@
+
+name = "MyJuliaSyntaxPackage"
+uuid = "12345678-abcd-ef12-3456-abcdef123456"
+authors = ["You"]
+version = "0.1.0"

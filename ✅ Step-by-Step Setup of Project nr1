@@ -1,0 +1,56 @@
+✅ Step-by-Step Setup of Project nr1
+📁 1. Open a terminal and run:
+bash
+Copy
+Edit
+cd ~/Documents/PROJECTS/JULIA
+mkdir nr1
+cd nr1
+Now you're inside:
+
+bash
+Copy
+Edit
+~/Documents/PROJECTS/JULIA/nr1
+🚀 2. Start Julia from inside this folder:
+bash
+Copy
+Edit
+julia
+🧱 3. Activate and initialize the project:
+julia
+Copy
+Edit
+using Pkg
+Pkg.activate(".")          # Mark this folder as a Julia environment
+Pkg.add("Plots")           # Add Plots and create Project.toml/Manifest.toml
+✅ This will create:
+
+Copy
+Edit
+nr1/
+├── Project.toml
+├── Manifest.toml
+Now Plots will appear in your Project.toml.
+
+🧩 4. Create source and test structure (optional but recommended):
+Back in Julia:
+
+julia
+Copy
+Edit
+mkdir("src")
+write("src/nr1.jl", "module nr1\n\nend")
+Also optionally:
+
+julia
+Copy
+Edit
+mkdir("test")
+write("test/runtests.jl", "using Test\nusing nr1\n\n@test 1 + 1 == 2")
+📊 5. Try it out:
+julia
+Copy
+Edit
+using Plots
+plot(1:5, rand(5), label="Random data")

@@ -1,0 +1,57 @@
+Here's a complete Julia script that will:
+
+Create a clean Julia project named nr1
+
+Set up the standard structure
+
+Add the Plots package
+
+Create a minimal module and test file
+
+📜 Paste this entire block into your Julia REPL:
+julia
+Copy
+Edit
+# --- Step 1: File setup ---
+import Pkg
+Pkg.activate(".")                         # Activate current folder
+Pkg.add("Plots")                          # Add plotting package
+
+# Create folders
+mkpath("src")
+mkpath("test")
+
+# --- Step 2: Minimal module in src/nr1.jl ---
+module_code = """
+module nr1
+
+greet(name) = "Hello, \$name!"
+
+end
+"""
+write("src/nr1.jl", module_code)
+
+# --- Step 3: Simple test in test/runtests.jl ---
+test_code = """
+using Test
+using nr1
+
+@test greet("Julia") == "Hello, Julia!"
+"""
+write("test/runtests.jl", test_code)
+
+println("✅ Project nr1 initialized.")
+println("📦 You can now use: `using nr1; greet(\"world\")`")
+✅ After running the script:
+Project.toml and Manifest.toml will exist
+
+Plots will be added
+
+Your module will be in src/nr1.jl
+
+You can run the test:
+
+bash
+Copy
+Edit
+julia --project=. -e 'using Pkg; Pkg.test()'

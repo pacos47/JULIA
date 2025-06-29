@@ -1,0 +1,15 @@
+o return from shell mode to the Julia REPL mode, you simply need to press the backspace key (or delete key on some keyboards) at the beginning of the line.
+
+Here's how it works:
+
+You are in shell mode: You'll see a prompt like shell> or julia> followed by a semicolon ; (e.g., julia> ;ls or shell>).
+Press backspace: If your cursor is right after the shell> or julia> ; prompt, just hit the backspace key.
+Return to REPL: The prompt will revert to the standard Julia REPL prompt julia>.
+Example:
+
+julia> ; # Press ; to enter shell mode
+shell> ls
+# (output of ls command)
+shell> # (Cursor is here)
+# Press backspace
+julia> # You are back in REPL mode

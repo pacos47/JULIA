@@ -1,0 +1,44 @@
+Julia's REPL (Read-Eval-Print Loop, the terminal where you type Julia commands) has special modes you can activate by pressing specific keys:
+
+🔹 ; → Shell Mode
+This lets you run Linux shell commands without leaving Julia.
+
+Example:
+julia
+Copy
+Edit
+julia> ;  # press semicolon
+shell> ls -l
+This runs the ls -l command as if you were in your terminal (bash, zsh, etc.).
+
+You can also assign output:
+
+julia
+Copy
+Edit
+julia> run(`ls`)  # does the same thing from normal mode
+🔹 ] → Package Mode
+This opens Pkg mode, where you manage Julia packages.
+
+When you press ], the prompt changes to:
+
+css
+Copy
+Edit
+(@v1.10) pkg>
+Now you can use commands like:
+
+julia
+Copy
+Edit
+(@v1.10) pkg> add Plots
+(@v1.10) pkg> update
+(@v1.10) pkg> status
+(@v1.10) pkg> rm Plots
+Exit back to Julia prompt by pressing Backspace or Ctrl+C.
+
+🔁 Summary Table
+Key	Mode	Purpose
+;	Shell mode	Run terminal commands
+]	Package mode	Manage Julia packages
+Backspace	--	Return to normal Julia mode

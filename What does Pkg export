@@ -1,0 +1,28 @@
+What does Pkg export?
+When you do:
+
+
+using Pkg
+You can directly use all of these without the Pkg. prefix (because they’re exported):
+
+✅ Commonly Exported Pkg Functions:
+
+add()
+activate()
+develop()
+instantiate()
+rm()
+status()
+update()
+test()
+build()
+gc()
+resolve()
+registry()
+generate()
+All of these are officially exported from Pkg and become available like this:
+
+
+add("Plots")
+status()
+instantiate()

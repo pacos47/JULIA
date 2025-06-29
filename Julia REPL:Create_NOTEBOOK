@@ -1,0 +1,71 @@
+Paste this updated version into your Julia REPL:
+
+julia
+Copy
+Edit
+import Pkg
+Pkg.activate(".")
+Pkg.add("Plots")
+
+# Create folders
+mkpath("src")
+mkpath("test")
+mkpath("notebooks")  # ← add notebooks folder
+
+# Minimal module
+module_code = """
+module nr1
+
+greet(name) = "Hello, \$name!"
+
+end
+"""
+write("src/nr1.jl", module_code)
+
+# Minimal test
+test_code = """
+using Test
+using nr1
+
+@test greet("Julia") == "Hello, Julia!"
+"""
+write("test/runtests.jl", test_code)
+
+println("✅ Project nr1 initialized with notebooks folder.")
+println("🗒️ You can now save Pluto or Jupyter notebooks in `notebooks/`.")
+📘 Using Pluto or Jupyter in notebooks/
+Option 1: Pluto.jl
+Install if needed:
+
+julia
+Copy
+Edit
+Pkg.add("Pluto")
+using Pluto
+Pluto.run()
+💡 Save notebooks inside notebooks/ and they'll use your local environment automatically if you start Pluto from nr1.
+
+Option 2: Jupyter Notebook
+Install:
+
+julia
+Copy
+Edit
+Pkg.add("IJulia")
+Then in terminal:
+
+bash
+Copy
+Edit
+cd ~/Documents/PROJECTS/JULIA/nr1
+julia --project=. -e 'using IJulia; notebook(dir="notebooks")'
+Would you like to pre-fill a demo .jl Pluto notebook file too?
+
+
+
+
+
+
+
+
+
